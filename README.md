@@ -30,7 +30,7 @@ AI-Project/
 │   └── feature_importance_analysis.csv
 │
 ├── models/                       # Serialized trained models
-│   ├── best_stroke_model_<NAME>.pkl
+│   ├── best_stroke_model_LogisticRegression_L1.pkl
 │   └── stroke_prediction_function.pkl
 │
 ├── src/                          # Source code (pipeline modules)
