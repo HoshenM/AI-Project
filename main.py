@@ -5,7 +5,7 @@ from src.preprocessing import preprocess_data
 from src.model_setup import get_models, get_param_grids
 from src.model_training import train_and_evaluate
 from src.results_analysis import analyze_results
-
+from src.feature_importance import plot_feature_importances
 
 
 if __name__ == "__main__":
@@ -29,3 +29,7 @@ if __name__ == "__main__":
     results_df, cv_df, overfitting_df = analyze_results(
         results_val, cv_results, overfitting_analysis
     )
+
+    importance_models = ["RandomForest", "XGBoost", "LightGBM", "CatBoost"]
+
+    plot_feature_importances(best_models, importance_models, pp, top_n=15)
