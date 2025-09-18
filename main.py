@@ -11,6 +11,14 @@ from src.ensemble_methods import build_voting_ensemble
 from src.learning_curves import plot_learning_curves
 from src.evaluation import evaluate_on_test_set
 from src.statistical_tests import compare_models_statistically
+from src.project_summary import summarize_project
+from src.save_results import save_best_model, save_comprehensive_report
+from src.validation_curves import run_validation_curves
+from src.performance_analysis import compare_validation_test_performance
+from src.feature_engineering import aggregate_feature_importance
+from src.deployment import predict_stroke_probability
+from src.final_report import print_final_report
+
 
 if __name__ == "__main__":
     # Detect hardware
@@ -74,3 +82,26 @@ if __name__ == "__main__":
             scores1 = cv_results[model1]['CV_Scores']
             scores2 = cv_results[model2]['CV_Scores']
             compare_models_statistically(scores1, scores2, model1, model2)
+
+
+        # Project Summary 
+        summarize_project(models, best_model_name, results_df, test_results,
+                          runtime_results, overfitting_df, pp)
+
+        save_best_model(best_model_final, best_model_name)
+        save_comprehensive_report(final_report)
+
+        run_validation_curves(models, preprocessor, X_train, y_train)
+
+        compare_validation_test_performance(results_val, test_results)
+
+        aggregate_feature_importance(best_models)
+
+        # Example deployment
+        sample_patient = X.iloc[0].to_dict()
+        prediction = predict_stroke_probability(sample_patient, best_model_final)
+        print("Example prediction:", prediction)
+
+        print_final_report(df, X, models, best_model_name, results_df,
+                           test_results, runtime_results)
+
