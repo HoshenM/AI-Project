@@ -80,7 +80,7 @@ Evaluated **14 supervised models**, including:
 - Ensemble improved overall AUC and recall compared to individual models.  
 - **fig5.pdf**: ensemble performance.  
 ```
----
+```
 
 ## Setup
 
@@ -93,7 +93,7 @@ venv\Scripts\activate
 source venv/bin/activate
 
 
-2) Install dependencies
+### 2) Install dependencies
 
 If you have requirements.txt:
 pip install -r requirements.txt
@@ -122,7 +122,7 @@ Train ensemble model and save results (fig5.pdf)
 
 Export final PDF report to results/
 ```
----
+```
 
 ## Outputs
 
@@ -195,17 +195,13 @@ Dataset: Kaggle Stroke Diagnosis and Health Metrics
 
 This repo includes all scripts to reproduce the analysis and figures.
 ```
----
-## Author
 
-Hoshen Maimon
 ```
----
 ## Contact
 
 Questions or feedback: hoshenmn@gmail.com
 ```
----
+```
 ## License
 
 Academic / coursework use. For other uses, please contact the author(s).
