@@ -24,7 +24,7 @@ AI-Project/
 │   ├── validation_curve_LogisticRegression_model_C.png
 │   ├── validation_curve_XGBoost_model_n_estimators.png
 │   ├── validation_curve_RandomForest_model_n_estimators.png
-│   └── consolidated_feature_importance.png
+│   ├── consolidated_feature_importance.png
 |   └── Llearninig curve- logisticregrussion_L1.png
 │
 ├── results/                      # Saved results and reports
@@ -32,7 +32,7 @@ AI-Project/
 │   ├── cv_results.csv
 │   ├── final_test_results.csv
 │   ├── comprehensive_results.json
-│   └── feature_importance_analysis.csv
+│   ├── feature_importance_analysis.csv
 │   ├── overfitting_analysis.csv
 │   └── detailed_performance_comparison.csv
 │
