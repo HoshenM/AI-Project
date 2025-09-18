@@ -11,12 +11,12 @@ All outputs are exported as **publication-ready figures and reports** into the `
 
 ## Project Structure
 ```bash
-stroke-classification-project/
+AI-Project/
 │
-├── data/                         # Raw and processed datasets
+├── data/                         # Raw dataset
 │   └── stroke_data.csv
 │
-├── figures/                      # All generated visualizations & reports
+├── figures/                      # Generated visualizations & reports
 │   ├── eda_report.pdf
 │   ├── stroke_project_report.pdf
 │   ├── validation_curve_*.png
@@ -29,34 +29,34 @@ stroke-classification-project/
 │   ├── comprehensive_results.json
 │   └── feature_importance_analysis.csv
 │
-├── models/                       # Serialized trained models & functions
+├── models/                       # Serialized trained models
 │   ├── best_stroke_model_<NAME>.pkl
 │   └── stroke_prediction_function.pkl
 │
-├── src/                          # Source code (modular pipeline)
-│   ├── data_loader.py            # Load dataset
-│   ├── eda_analysis.py           # Exploratory Data Analysis
-│   ├── preprocessing.py          # Data preprocessing & feature encoding
-│   ├── model_setup.py            # Define models & hyperparameter grids
-│   ├── model_training.py         # Training, tuning & evaluation
-│   ├── results_analysis.py       # Analyze validation & CV results
-│   ├── feature_importance.py     # Plot feature importances
-│   ├── ensemble_methods.py       # Voting ensemble creation
-│   ├── learning_curves.py        # Generate learning curves
-│   ├── evaluation.py             # Final test set evaluation
-│   ├── statistical_tests.py      # Statistical significance testing
-│   ├── project_summary.py        # Print project summary
-│   ├── save_results.py           # Save best model & full results
-│   ├── validation_curves.py      # Validation curves for hyperparameters
-│   ├── performance_analysis.py   # Compare validation vs test performance
-│   ├── feature_engineering.py    # Aggregate feature importance insights
-│   ├── deployment.py             # Deployment functions (prediction API)
-│   ├── final_report.py           # Final project report
-│   └── hardware_monitor.py       # Track CPU / memory usage
+├── src/                          # Source code (pipeline modules)
+│   ├── data_loader.py
+│   ├── eda_analysis.py
+│   ├── preprocessing.py
+│   ├── model_setup.py
+│   ├── model_training.py
+│   ├── results_analysis.py
+│   ├── feature_importance.py
+│   ├── ensemble_methods.py
+│   ├── learning_curves.py
+│   ├── evaluation.py
+│   ├── statistical_tests.py
+│   ├── project_summary.py
+│   ├── save_results.py
+│   ├── validation_curves.py
+│   ├── performance_analysis.py
+│   ├── feature_engineering.py
+│   ├── deployment.py
+│   ├── final_report.py
+│   └── hardware_monitor.py
 │
-├── main.py                       # Orchestrator script (pipeline entrypoint)
+├── main.py                       # Pipeline entrypoint
 ├── requirements.txt              # Python dependencies
-└── README.md                     # Project documentation
+└── README.md                     # Documentation                  # Project documentation
 
 
 ```
@@ -151,25 +151,27 @@ This will:
 
 ---
 
-## Outputs (PDFs in `figures_pdf/`)
+## Outputs (in figures/)
 
-- **fig1.pdf** — Feature distributions (EDA)  
-- **fig2.pdf** — Correlation heatmap  
-- **fig3.pdf** — Model comparison & selection  
-- **fig4.pdf** — Confusion matrices, ROC & PR curves  
-- **fig5.pdf** — Ensemble results & statistical tests  
-- **final_report.pdf** — Complete project report
+- eda_report.pdf — Exploratory Data Analysis report
 
+- stroke_project_report.pdf — Combined model evaluation report
+
+- validation_curve_*.png — Validation curves for selected models
+
+- consolidated_feature_importance.png — Top features across models
+
+final_report.pdf — Complete project summary
 ---
 
-## Key Results (current run)
+## Key Results (latest run)
 
 - **Best Individual Model**: Logistic Regression (L1)  
   - Accuracy: **0.842**  
-  - ROC-AUC: **0.856**  
+  - ROC-AUC: **0.856** (primary evaluation metric for imbalanced data)  
   - Recall (Stroke class): **0.781**
 
-- **Best Ensemble**: Soft Voting (LR + Random Forest + CatBoost)  
+- **Best Ensemble**: Soft Voting (Logistic Regression + Random Forest + CatBoost)  
   - Accuracy: **0.849**  
   - ROC-AUC: **0.869**  
   - Recall (Stroke class): **0.804**
@@ -188,21 +190,47 @@ This will:
 
 ## Files — What They Do
 
-- **preprocessing.py** — cleaning, encoding, scaling
+- data_loader.py — loads the dataset from `data/`
 
-- **eda_analysis.py** — EDA plots & feature correlations
+- eda_analysis.py — generates EDA plots & correlation heatmaps
 
-- **model_training.py** — model wrappers & training functions
+- preprocessing.py — data cleaning, feature engineering, encoding, and scaling
 
-- **hyperparameter_tuning.py** — GridSearchCV & Optuna optimization
+- model_setup.py — defines ML models and hyperparameter grids
 
-- **evaluation.py** — metrics, curves, confusion matrices
+- model_training.py — trains models, runs cross-validation, hyperparameter tuning
 
-- **ensemble_methods.py** — voting, bagging, boosting
+- results_analysis.py — summarizes validation, cross-validation, and overfitting results
 
-- **pdf_saver.py** — saves figures as PDFs
+- feature_importance.py — plots feature importances for tree-based models
 
-- **main.py** — orchestrates entire pipeline
+- ensemble_methods.py — builds and evaluates ensemble models (e.g. voting classifier)
+
+- learning_curves.py — generates learning curves for top models
+
+- evaluation.py — evaluates final model(s) on the test set
+
+- statistical_tests.py — runs statistical significance tests between models
+
+- project_summary.py — prints project summary and recommendations
+
+- save_results.py — saves trained models and results to disk (`results/` + `models/`)
+
+- validation_curves.py — generates validation curves for key hyperparameters
+
+- performance_analysis.py — compares validation vs test metrics
+
+- feature_engineering.py — analyzes and aggregates feature importance across models
+
+- deployment.py — provides prediction API for new patient data + saves predictor function
+
+- final_report.py — prints the final report with outputs and findings
+
+- hardware_monitor.py — tracks CPU and memory usage during training
+
+- main.py — orchestrates the full pipeline (entrypoint)
+
+- requirements.txt — list of dependencies
 
 ---
 
