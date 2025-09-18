@@ -1,7 +1,7 @@
 # Introduction to Artificial Intelligence – Final Project  
 **Stroke Prediction using AI & Machine Learning**
 
-This project applies **exploratory data analysis (EDA)**, **data preprocessing**, and both **supervised** and **ensemble learning methods** to a healthcare dataset from Kaggle: [Stroke Diagnosis and Health Metrics Data](https://www.kaggle.com/datasets/shriyashjagtap/stroke-diagnosis-and-health-metrics-data).
+This project applies **exploratory data analysis (EDA)**, **data preprocessing**, and both **supervised** and **ensemble learning methods** to a healthcare dataset.
 
 It explores **risk factors for stroke** through feature analysis, evaluates **14 machine learning models** with cross-validation and hyperparameter tuning, and validates findings with **statistical significance tests**.  
 
@@ -122,43 +122,30 @@ This will:
 4. Train ensemble model and save results (**fig5.pdf**)
 
 5. Export final PDF report to `results/`
-```
-```
+
 ## Outputs
 
-- **fig1.pdf** — Feature distributions (EDA)
-
-- **fig2.pdf** — Correlation heatmap
-
-- **fig3.pdf** — Model comparison & selection
-
-- **fig4.pdf** — Confusion matrices, ROC & PR curves
-
-- **fig5.pdf** — Ensemble results & statistical tests
-
+- **fig1.pdf** — Feature distributions (EDA)  
+- **fig2.pdf** — Correlation heatmap  
+- **fig3.pdf** — Model comparison & selection  
+- **fig4.pdf** — Confusion matrices, ROC & PR curves  
+- **fig5.pdf** — Ensemble results & statistical tests  
 - **final_report.pdf** — Complete project report
-```
-```
+
+
 ## Key Results (current run)
 
-- **Best Individual Model**: Logistic Regression (L1)
+- **Best Individual Model**: Logistic Regression (L1)  
+  - Accuracy: **0.842**  
+  - ROC-AUC: **0.856**  
+  - Recall (Stroke class): **0.781**
 
---Accuracy: **0.842**
+- **Best Ensemble**: Soft Voting (LR + Random Forest + CatBoost)  
+  - Accuracy: **0.849**  
+  - ROC-AUC: **0.869**  
+  - Recall (Stroke class): **0.804**
 
---ROC-AUC: **0.856**
 
---Recall (Stroke class): **0.781**
-
-- **Best Ensemble**: Soft Voting (LR + Random Forest + CatBoost)
-
---Accuracy: **0.849**
-
---ROC-AUC: **0.869**
-
---Recall (Stroke class): **0.804**
-```
-
-```
 ## Reproducibility
 
 - `random_state=42` everywhere
@@ -166,8 +153,8 @@ This will:
 - **Stratified splits** for balanced folds
 
 - **Scaling** applied only after splitting
-```
-```
+
+
 ## Files — What They Do
 
 - **preprocessing.py** — cleaning, encoding, scaling
@@ -185,18 +172,16 @@ This will:
 - **pdf_saver.py** — saves figures as PDFs
 
 - **main.py** — orchestrates entire pipeline
-```
 
-```
+
 ## Data & Code
 
 - Dataset: [Stroke Diagnosis and Health Metrics Data](https://www.kaggle.com/datasets/shriyashjagtap/stroke-diagnosis-and-health-metrics-data)
 
 
 - This repo includes all scripts to reproduce the analysis and figures.
-```
 
-```
+
 ## Contact
 
 Questions or feedback: hoshenmn@gmail.com
