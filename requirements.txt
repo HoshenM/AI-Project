@@ -1,5 +1,3 @@
-!pip install google-colab --quiet
-!pip install catboost --quiet
 numpy
 pandas
 matplotlib
