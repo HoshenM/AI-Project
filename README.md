@@ -36,9 +36,10 @@ ai_stroke_project/
 └── README.md
 
 
+
 ---
 
-## 📊 Methods Overview
+## Methods Used
 
 ### Preprocessing & EDA
 - Dropped missing values and inconsistent rows.
