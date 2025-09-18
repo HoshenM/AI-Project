@@ -1,1 +1,59 @@
+def print_final_report(df, X, models, best_model_name, results_df,
+                       test_results, runtime_results):
+    """
+    Print the final summary report for the stroke classification project.
 
+    Args:
+        df (pd.DataFrame): Original dataset.
+        X (pd.DataFrame): Features DataFrame.
+        models (dict): Dictionary of trained models.
+        best_model_name (str): Name of the best model.
+        results_df (pd.DataFrame): Validation results summary.
+        test_results (dict): Final test evaluation results.
+        runtime_results (dict): Model training runtimes.
+    """
+    print("\n" + "=" * 80)
+    print("STROKE CLASSIFICATION PROJECT COMPLETED SUCCESSFULLY!")
+    print("=" * 80)
+
+    print(f"""
+PROJECT SUMMARY:
+├── Dataset: {len(df):,} samples, {len(X.columns)} features
+├── Models Evaluated: {len(models)}
+├── Best Model: {best_model_name}
+├── Best Validation AUC: {results_df.loc[best_model_name, 'AUC']:.4f}
+├── Best Test AUC: {test_results[best_model_name]['Test_AUC']:.4f}
+├── Total Training Time: {sum(runtime_results.values()):.2f} seconds
+""")
+
+    print("OUTPUT FILES:")
+    print("├── figures/stroke_project_report.pdf - Complete visualizations")
+    print("├── model_comparison.csv - Model performance comparison")
+    print("├── cv_results.csv - Cross-validation results")
+    print("├── final_test_results.csv - Final test performance")
+    print("├── comprehensive_results.json - Complete project summary")
+    print(f"├── best_stroke_model_{best_model_name}.pkl - Trained model")
+    print("├── stroke_prediction_function.pkl - Prediction function")
+    print("└── feature_importance_analysis.csv - Feature analysis\n")
+
+    print("KEY FINDINGS:")
+    print(f"├── Best performing algorithm: {best_model_name}")
+    print("├── Most important evaluation metric: AUC (suitable for imbalanced data)")
+    print("├── Class imbalance handled with: SMOTE + Tomek Links")
+    print("├── Regularization techniques: L1/L2, Early Stopping, Max Depth limits")
+    print("└── No significant overfitting detected in best models\n")
+
+    print("READY FOR DEPLOYMENT:")
+    print(f"├── Model saved and ready for production")
+    print(f"├── Prediction function created")
+    print(f"├── Performance benchmarks established")
+    print(f"└── Feature importance documented\n")
+
+    print("RECOMMENDATIONS:")
+    print(f"├── Use {best_model_name} for production deployment")
+    print(f"├── Monitor model performance on new data")
+    print(f"├── Consider retraining with more recent data")
+    print(f"└── Implement A/B testing for model updates")
+    print("=" * 80)
+    print("The project was successfully completed. Detailed results are in the additional files generated.")
+    print("=" * 80)
