@@ -18,7 +18,7 @@ AI-Project/
 │
 ├── figures/                      # Generated visualizations & reports
 │   ├── eda_report.pdf
-│   ├── stroke_project_report.pdf
+│   ├── stroke_project_result.pdf
 │   ├── validation_curve_XGBoost_model_n_estimators.png
 │   ├── validation_curve_XGBoost_model_learning_rate.png
 │   ├── validation_curve_LogisticRegression_model_C.png
