@@ -7,10 +7,8 @@ It explores **risk factors for stroke** through feature analysis, evaluates **14
 
 All outputs are exported as **publication-ready figures and reports** into the `results/` and `figures/` directories.
 
----
 
 ## Project Structure
-```
 ai_stroke_project/
 ├── src/
 │ ├── preprocessing.py
@@ -34,7 +32,7 @@ ai_stroke_project/
 │ └── final_report.pdf # exported report
 ├── main.py # orchestrates full pipeline
 └── README.md
-```
+
 
 ## Methods Used
 
@@ -79,7 +77,6 @@ Evaluated **14 supervised models**, including:
 - Ensemble improved overall AUC and recall compared to individual models.  
 - **fig5.pdf**: ensemble performance.  
 ```
-```
 
 ## Setup
 
@@ -105,7 +102,7 @@ pip install numpy pandas matplotlib seaborn scikit-learn xgboost lightgbm catboo
 ### 3) Dataset
 Place `stroke_data.csv` inside the `data/` folder.
 
----
+
 ## How to Run
 Run the full pipeline:
 ```bash
@@ -185,4 +182,3 @@ This will:
 ## Contact
 
 Questions or feedback: hoshenmn@gmail.com
-```
