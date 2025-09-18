@@ -4,6 +4,8 @@ from src.eda_analysis import run_eda
 from src.preprocessing import preprocess_data
 from src.model_setup import get_models, get_param_grids
 from src.model_training import train_and_evaluate
+from src.results_analysis import analyze_results
+
 
 
 if __name__ == "__main__":
@@ -22,4 +24,8 @@ if __name__ == "__main__":
 
     best_models, results_val, cv_results, runtime_results, overfitting_analysis, resource_usage = train_and_evaluate(
         models, param_grids, preprocessor, X_train, y_train, X_valid, y_valid, pp
+    )
+    
+    results_df, cv_df, overfitting_df = analyze_results(
+        results_val, cv_results, overfitting_analysis
     )
