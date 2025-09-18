@@ -11,28 +11,53 @@ All outputs are exported as **publication-ready figures and reports** into the `
 
 ## Project Structure
 ```bash
-ai_stroke_project/
-├── src/
-│   ├── data_loader.py          # loads dataset
-│   ├── eda_analysis.py         # runs EDA
-│   ├── preprocessing.py        # preprocessing + split
-│   ├── model_training.py       # (later) train ML models
-│   ├── hyperparameter_tuning.py# (later) grids + Optuna
-│   ├── evaluation.py           # evaluation + plots
-│   ├── ensemble_methods.py     # ensembles
-│   ├── hardware_monitor.py     # optional hardware logs
-│   └── __init__.py
-├── notebooks/
-│   └── AI_Project.ipynb        # your original Colab notebook
-├── data/
+stroke-classification-project/
+│
+├── data/                         # Raw and processed datasets
 │   └── stroke_data.csv
-├── figures/
-│   └── (auto-generated PDFs)
-├── results/
-│   └── final_report.pdf
-├── main.py                     # runs everything in order
-├── requirements.txt
-└── README.md
+│
+├── figures/                      # All generated visualizations & reports
+│   ├── eda_report.pdf
+│   ├── stroke_project_report.pdf
+│   ├── validation_curve_*.png
+│   └── consolidated_feature_importance.png
+│
+├── results/                      # Saved results and reports
+│   ├── model_comparison.csv
+│   ├── cv_results.csv
+│   ├── final_test_results.csv
+│   ├── comprehensive_results.json
+│   └── feature_importance_analysis.csv
+│
+├── models/                       # Serialized trained models & functions
+│   ├── best_stroke_model_<NAME>.pkl
+│   └── stroke_prediction_function.pkl
+│
+├── src/                          # Source code (modular pipeline)
+│   ├── data_loader.py            # Load dataset
+│   ├── eda_analysis.py           # Exploratory Data Analysis
+│   ├── preprocessing.py          # Data preprocessing & feature encoding
+│   ├── model_setup.py            # Define models & hyperparameter grids
+│   ├── model_training.py         # Training, tuning & evaluation
+│   ├── results_analysis.py       # Analyze validation & CV results
+│   ├── feature_importance.py     # Plot feature importances
+│   ├── ensemble_methods.py       # Voting ensemble creation
+│   ├── learning_curves.py        # Generate learning curves
+│   ├── evaluation.py             # Final test set evaluation
+│   ├── statistical_tests.py      # Statistical significance testing
+│   ├── project_summary.py        # Print project summary
+│   ├── save_results.py           # Save best model & full results
+│   ├── validation_curves.py      # Validation curves for hyperparameters
+│   ├── performance_analysis.py   # Compare validation vs test performance
+│   ├── feature_engineering.py    # Aggregate feature importance insights
+│   ├── deployment.py             # Deployment functions (prediction API)
+│   ├── final_report.py           # Final project report
+│   └── hardware_monitor.py       # Track CPU / memory usage
+│
+├── main.py                       # Orchestrator script (pipeline entrypoint)
+├── requirements.txt              # Python dependencies
+└── README.md                     # Project documentation
+
 
 ```
 ---
