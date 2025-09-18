@@ -79,7 +79,7 @@ Evaluated **14 supervised models**, including:
 - Implemented **Soft Voting Classifier** combining best 3 models.  
 - Ensemble improved overall AUC and recall compared to individual models.  
 - **fig5.pdf**: ensemble performance.  
-
+```
 ---
 
 ## Setup
@@ -103,9 +103,9 @@ pip install numpy pandas matplotlib seaborn scikit-learn xgboost lightgbm catboo
 3) Dataset
 
 Place stroke_data.csv inside the data/ folder.
-
+```
 ---
-▶️ How to Run
+## How to Run
 
 Run the full pipeline:
 python main.py
@@ -121,8 +121,10 @@ Generate evaluation reports (fig3.pdf, fig4.pdf)
 Train ensemble model and save results (fig5.pdf)
 
 Export final PDF report to results/
+```
+---
 
-📁 Outputs
+## Outputs
 
 fig1.pdf — Feature distributions (EDA)
 
@@ -135,8 +137,10 @@ fig4.pdf — Confusion matrices, ROC & PR curves
 fig5.pdf — Ensemble results & statistical tests
 
 final_report.pdf — Complete project report
+```
+---
 
-✅ Key Results (current run)
+## Key Results (current run)
 
 Best Individual Model: Logistic Regression (L1)
 
@@ -153,8 +157,11 @@ Accuracy: 0.849
 ROC-AUC: 0.869
 
 Recall (Stroke class): 0.804
+```
 
-🔍 Reproducibility
+---
+
+## Reproducibility
 
 random_state=42 everywhere
 
@@ -179,22 +186,27 @@ ensemble_methods.py — voting, bagging, boosting
 pdf_saver.py — saves figures as PDFs
 
 main.py — orchestrates entire pipeline
+```
 
-🔗 Data & Code
+---
+## Data & Code
 
 Dataset: Kaggle Stroke Diagnosis and Health Metrics
 
 This repo includes all scripts to reproduce the analysis and figures.
-
-Author
+```
+---
+## Author
 
 Hoshen Maimon
-
-Contact
+```
+---
+## Contact
 
 Questions or feedback: hoshenmn@gmail.com
-
-License
+```
+---
+## License
 
 Academic / coursework use. For other uses, please contact the author(s).
-
+```
