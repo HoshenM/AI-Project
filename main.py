@@ -3,6 +3,7 @@ from src.data_loader import load_data
 from src.eda_analysis import run_eda
 from src.preprocessing import preprocess_data
 from src.model_setup import get_models, get_param_grids
+from src.model_training import train_and_evaluate
 
 
 if __name__ == "__main__":
@@ -18,3 +19,7 @@ if __name__ == "__main__":
     models = get_models(pos_weight)
     param_grids = get_param_grids()
 
+
+    best_models, results_val, cv_results, runtime_results, overfitting_analysis, resource_usage = train_and_evaluate(
+        models, param_grids, preprocessor, X_train, y_train, X_valid, y_valid, pp
+    )
