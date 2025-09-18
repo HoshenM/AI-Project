@@ -161,7 +161,7 @@ This will:
 
 - consolidated_feature_importance.png — Top features across models
 
-final_report.pdf — Complete project summary
+- final_report.pdf — Complete project summary
 ---
 
 ## Key Results (latest run)
