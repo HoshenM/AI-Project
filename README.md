@@ -91,17 +91,18 @@ python -m venv venv
 venv\Scripts\activate
 # macOS / Linux
 source venv/bin/activate
-
+```
 
 ### 2) Install dependencies
-
+```bash
 If you have requirements.txt:
 pip install -r requirements.txt
 Otherwise:
 pip install numpy pandas matplotlib seaborn scikit-learn xgboost lightgbm catboost optuna reportlab pypdf
+```
 
-3) Dataset
-
+### 3) Dataset
+```bash
 Place stroke_data.csv inside the data/ folder.
 ```
 ---
@@ -138,8 +139,7 @@ fig5.pdf — Ensemble results & statistical tests
 
 final_report.pdf — Complete project report
 ```
----
-
+```
 ## Key Results (current run)
 
 Best Individual Model: Logistic Regression (L1)
@@ -159,8 +159,7 @@ ROC-AUC: 0.869
 Recall (Stroke class): 0.804
 ```
 
----
-
+```
 ## Reproducibility
 
 random_state=42 everywhere
@@ -168,8 +167,9 @@ random_state=42 everywhere
 Stratified splits for balanced folds
 
 Scaling applied only after splitting
-
-🧩 Files — What They Do
+```
+```
+## Files — What They Do
 
 preprocessing.py — cleaning, encoding, scaling
 
@@ -188,7 +188,7 @@ pdf_saver.py — saves figures as PDFs
 main.py — orchestrates entire pipeline
 ```
 
----
+```
 ## Data & Code
 
 Dataset: Kaggle Stroke Diagnosis and Health Metrics
@@ -200,9 +200,4 @@ This repo includes all scripts to reproduce the analysis and figures.
 ## Contact
 
 Questions or feedback: hoshenmn@gmail.com
-```
-```
-## License
-
-Academic / coursework use. For other uses, please contact the author(s).
 ```
