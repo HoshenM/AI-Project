@@ -12,7 +12,7 @@ from src.learning_curves import plot_learning_curves
 from src.evaluation import evaluate_on_test_set
 from src.statistical_tests import compare_models_statistically
 from src.project_summary import summarize_project
-from src.save_results import save_best_model, save_comprehensive_report
+from src.save_results import save_results
 from src.validation_curves import run_validation_curves
 from src.performance_analysis import compare_validation_test_performance
 from src.feature_engineering import aggregate_feature_importance
@@ -88,10 +88,12 @@ if __name__ == "__main__":
         summarize_project(models, best_model_name, results_df, test_results,
                           runtime_results, overfitting_df, pp)
 
-        save_best_model(best_model_final, best_model_name)
-        save_comprehensive_report(final_report)
+        save_results(best_model_final, best_model_name, df, X, y,
+             X_train, X_valid, X_test,
+             models, results_df, results_val, test_results,
+             cv_results, overfitting_analysis, runtime_results)
 
-        run_validation_curves(models, preprocessor, X_train, y_train)
+        run_validation_curves(models, preprocessor, X_train, y_train, preprocessor)
 
         compare_validation_test_performance(results_val, test_results)
 
