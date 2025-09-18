@@ -16,7 +16,7 @@ from src.save_results import save_results
 from src.validation_curves import run_validation_curves
 from src.performance_analysis import compare_validation_test_performance
 from src.feature_engineering import aggregate_feature_importance
-from src.deployment import predict_stroke_probability
+from src.deployment import predict_stroke_probability, save_prediction_function
 from src.final_report import print_final_report
 
 
@@ -71,7 +71,7 @@ if __name__ == "__main__":
         plot_learning_curves(best_model, best_model_name, X_train, y_train, pdf_saver=pp)
 
         # Final test evaluation
-        final_test_df = evaluate_on_test_set(
+        final_test_df, test_results, best_model_final = evaluate_on_test_set(
             best_models, best_model_name, X_test, y_test, pdf_saver=pp
         )
 
@@ -83,32 +83,32 @@ if __name__ == "__main__":
             scores2 = cv_results[model2]['CV_Scores']
             compare_models_statistically(scores1, scores2, model1, model2)
 
-
         # Project Summary 
         summarize_project(models, best_model_name, results_df, test_results,
                           runtime_results, overfitting_df, pp)
 
-        save_results(best_model_final, best_model_name, df, X, y,
-             X_train, X_valid, X_test,
-             models, results_df, results_val, test_results,
-             cv_results, overfitting_analysis, runtime_results)
+        # Save models + results
+        save_results(best_model_final, best_model_name, df, X_train, X_valid, X_test,
+                     models, results_df, results_val, test_results,
+                     cv_results, overfitting_analysis, runtime_results)
 
-        run_validation_curves(models, preprocessor, X_train, y_train, preprocessor)
+        # Validation curves
+        run_validation_curves(models, preprocessor, X_train, y_train)
 
+        # Compare val/test performance
         compare_validation_test_performance(results_val, test_results)
 
+        # Aggregate feature importance
         aggregate_feature_importance(best_models)
 
-
-        # Save the function
-        save_prediction_function(best_model, "stroke_prediction_function.pkl")
-
+        # Save the prediction function
+        save_prediction_function(best_model_final, "stroke_prediction_function.pkl")
 
         # Example deployment
-        sample_patient = X.iloc[0].to_dict()
+        sample_patient = X_test.iloc[0].to_dict()
         prediction = predict_stroke_probability(sample_patient, best_model_final)
         print("Example prediction:", prediction)
 
-        print_final_report(df, X, models, best_model_name, results_df,
+        # Final report
+        print_final_report(df, X_train, models, best_model_name, results_df,
                            test_results, runtime_results)
-
