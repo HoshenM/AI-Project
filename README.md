@@ -94,17 +94,18 @@ source venv/bin/activate
 ```
 
 ### 2) Install dependencies
-```bash
 If you have requirements.txt:
+```bash
 pip install -r requirements.txt
+```
 Otherwise:
+```bash
 pip install numpy pandas matplotlib seaborn scikit-learn xgboost lightgbm catboost optuna reportlab pypdf
 ```
 
 ### 3) Dataset
-```bash
 Place stroke_data.csv inside the data/ folder.
-```
+
 ---
 ## How to Run
 
