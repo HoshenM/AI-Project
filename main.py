@@ -99,6 +99,11 @@ if __name__ == "__main__":
 
         aggregate_feature_importance(best_models)
 
+
+        # Save the function
+        save_prediction_function(best_model, "stroke_prediction_function.pkl")
+
+
         # Example deployment
         sample_patient = X.iloc[0].to_dict()
         prediction = predict_stroke_probability(sample_patient, best_model_final)
