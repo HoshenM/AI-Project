@@ -35,7 +35,6 @@ ai_stroke_project/
 ├── main.py # orchestrates full pipeline
 └── README.md
 ```
----
 
 ## Methods Used
 
@@ -125,7 +124,6 @@ This will:
 5. Export final PDF report to `results/`
 ```
 ```
-
 ## Outputs
 
 - **fig1.pdf** — Feature distributions (EDA)
@@ -145,19 +143,19 @@ This will:
 
 - **Best Individual Model**: Logistic Regression (L1)
 
-Accuracy: 0.842
+--Accuracy: **0.842**
 
-ROC-AUC: 0.856
+--ROC-AUC: **0.856**
 
-Recall (Stroke class): **0.781**
+--Recall (Stroke class): **0.781**
 
 - **Best Ensemble**: Soft Voting (LR + Random Forest + CatBoost)
 
-Accuracy: **0.849**
+--Accuracy: **0.849**
 
-ROC-AUC: **0.869**
+--ROC-AUC: **0.869**
 
-Recall (Stroke class): **0.804**
+--Recall (Stroke class): **0.804**
 ```
 
 ```
@@ -192,7 +190,8 @@ Recall (Stroke class): **0.804**
 ```
 ## Data & Code
 
-- Dataset: Kaggle Stroke Diagnosis and Health Metrics
+- Dataset: [Stroke Diagnosis and Health Metrics Data](https://www.kaggle.com/datasets/shriyashjagtap/stroke-diagnosis-and-health-metrics-data)
+
 
 - This repo includes all scripts to reproduce the analysis and figures.
 ```
