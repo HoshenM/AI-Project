@@ -95,7 +95,6 @@ if __name__ == "__main__":
 
         run_validation_curves(models, preprocessor, X_train, y_train, preprocessor)
 
-
         compare_validation_test_performance(results_val, test_results)
 
         aggregate_feature_importance(best_models)
