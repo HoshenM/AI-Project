@@ -8,6 +8,8 @@ from src.results_analysis import analyze_results
 from src.feature_importance import plot_feature_importances
 from src.ensemble_methods import build_voting_ensemble
 from src.learning_curves import plot_learning_curves
+from src.evaluation import evaluate_on_test_set
+from src.statistical_tests import compare_models_statistically
 
 
 if __name__ == "__main__":
@@ -49,3 +51,14 @@ if __name__ == "__main__":
 
     plot_learning_curves(best_model, best_model_name, X_train, y_train, pdf_saver=pp)
 
+    final_test_df = evaluate_on_test_set(
+        best_models, best_model_name, X_test, y_test, pdf_saver=pp
+    )
+
+    # Example: compare top 2 models from validation
+    top_3_models = results_df.nlargest(3, 'AUC').index
+    if len(top_3_models) >= 2:
+        model1, model2 = top_3_models[0], top_3_models[1]
+        scores1 = cv_results[model1]['CV_Scores']
+        scores2 = cv_results[model2]['CV_Scores']
+        test_result = compare_models_statistically(scores1, scores2, model1, model2)
