@@ -34,20 +34,18 @@ ai_stroke_project/
 │ └── final_report.pdf # exported report
 ├── main.py # orchestrates full pipeline
 └── README.md
-
-
-
+```
 ---
 
 ## Methods Used
 
 ### Preprocessing & EDA
-- Dropped missing values and inconsistent rows.
-- Standardized continuous variables (`Age`, `BMI`, `Avg_Glucose`).
-- One-hot encoded categorical variables (`Gender`, `SES`, `Smoking_Status`).
-- EDA outputs:
-  - **fig1.pdf**: feature distributions.
-  - **fig2.pdf**: correlation heatmap & target associations.
+- Dropped missing values and inconsistent rows.  
+- Standardized continuous variables (**Age**, **BMI**, **Avg_Glucose**).  
+- One-hot encoded categorical variables (**Gender**, **SES**, **Smoking_Status**).  
+- **EDA outputs**:  
+  - **fig1.pdf**: feature distributions.  
+  - **fig2.pdf**: correlation heatmap & target associations.  
 
 ### Data Splitting & Scaling
 - **Stratified split**: 70% train, 15% validation, 15% test.  
@@ -55,43 +53,45 @@ ai_stroke_project/
 - Validation used for **early stopping** (when supported).  
 
 ### Models
-Evaluated **14 supervised models**, including:
-- Logistic Regression (L1, L2)
-- Decision Tree, Random Forest
-- Gradient Boosting, XGBoost, LightGBM, CatBoost
-- SVM (linear, RBF)
-- KNN, Naive Bayes
-- Ensemble methods (Voting, Bagging, Boosting)
+Evaluated **14 supervised models**, including:  
+- Logistic Regression (L1, L2)  
+- Decision Tree, Random Forest  
+- Gradient Boosting, XGBoost, LightGBM, CatBoost  
+- SVM (linear, RBF)  
+- KNN, Naive Bayes  
+- Ensemble methods (Voting, Bagging, Boosting)  
 
 ### Hyperparameter Tuning
-- Used **GridSearchCV** and **Optuna** (5-fold time-aware CV).
-- Optimized depth, learning rate, regularization, number of estimators, and class weights.
+- Used **GridSearchCV** and **Optuna** (5-fold time-aware CV).  
+- Optimized depth, learning rate, regularization, number of estimators, and class weights.  
 
 ### Evaluation & Selection
-- Metrics: **Accuracy, Precision, Recall, F1, ROC-AUC, PR-AUC**.
-- Figures:
-  - **fig3.pdf**: model comparison & ranking.
-  - **fig4.pdf**: confusion matrices, ROC & PR curves.
+- Metrics: **Accuracy, Precision, Recall, F1, ROC-AUC, PR-AUC**.  
+- Figures:  
+  - **fig3.pdf**: model comparison & ranking.  
+  - **fig4.pdf**: confusion matrices, ROC & PR curves.  
 
 ### Statistical Validation
-- Applied **significance tests** (paired t-test, McNemar’s test) to compare classifiers.
-- Highlighted differences in recall/precision for minority class (stroke cases).
+- Applied **significance tests** (paired t-test, McNemar’s test) to compare classifiers.  
+- Highlighted differences in recall/precision for minority class (**stroke cases**).  
 
 ### Ensemble Methods
-- Implemented **Soft Voting Classifier** combining best 3 models.
-- Ensemble improved overall AUC and recall compared to individual models.
-- **fig5.pdf**: ensemble performance.
+- Implemented **Soft Voting Classifier** combining best 3 models.  
+- Ensemble improved overall AUC and recall compared to individual models.  
+- **fig5.pdf**: ensemble performance.  
 
 ---
+
 ## Setup
 
-### 1) (Optional) Create a virtual environment
+### 1) Create a virtual environment (optional)
 ```bash
 python -m venv venv
 # Windows
 venv\Scripts\activate
 # macOS / Linux
 source venv/bin/activate
+
 
 2) Install dependencies
 
