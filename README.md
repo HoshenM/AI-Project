@@ -7,8 +7,10 @@ It explores **risk factors for stroke** through feature analysis, evaluates **14
 
 All outputs are exported as **publication-ready figures and reports** into the `results/` and `figures/` directories.
 
+---
 
 ## Project Structure
+```bash
 ai_stroke_project/
 ├── src/
 │ ├── preprocessing.py
@@ -32,8 +34,8 @@ ai_stroke_project/
 │ └── final_report.pdf # exported report
 ├── main.py # orchestrates full pipeline
 └── README.md
-
-
+```
+---
 ## Methods Used
 
 ### Preprocessing & EDA
@@ -76,7 +78,8 @@ Evaluated **14 supervised models**, including:
 - Implemented **Soft Voting Classifier** combining best 3 models.  
 - Ensemble improved overall AUC and recall compared to individual models.  
 - **fig5.pdf**: ensemble performance.  
-```
+
+---
 
 ## Setup
 
@@ -102,6 +105,7 @@ pip install numpy pandas matplotlib seaborn scikit-learn xgboost lightgbm catboo
 ### 3) Dataset
 Place `stroke_data.csv` inside the `data/` folder.
 
+---
 
 ## How to Run
 Run the full pipeline:
@@ -120,6 +124,8 @@ This will:
 
 5. Export final PDF report to `results/`
 
+---
+
 ## Outputs
 
 - **fig1.pdf** — Feature distributions (EDA)  
@@ -129,6 +135,7 @@ This will:
 - **fig5.pdf** — Ensemble results & statistical tests  
 - **final_report.pdf** — Complete project report
 
+---
 
 ## Key Results (current run)
 
@@ -142,6 +149,7 @@ This will:
   - ROC-AUC: **0.869**  
   - Recall (Stroke class): **0.804**
 
+---
 
 ## Reproducibility
 
@@ -151,6 +159,7 @@ This will:
 
 - **Scaling** applied only after splitting
 
+---
 
 ## Files — What They Do
 
@@ -170,6 +179,7 @@ This will:
 
 - **main.py** — orchestrates entire pipeline
 
+---
 
 ## Data & Code
 
@@ -178,6 +188,7 @@ This will:
 
 - This repo includes all scripts to reproduce the analysis and figures.
 
+---
 
 ## Contact
 
