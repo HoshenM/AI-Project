@@ -13,27 +13,27 @@ All outputs are exported as **publication-ready figures and reports** into the `
 ```bash
 ai_stroke_project/
 ├── src/
-│ ├── preprocessing.py
-│ ├── eda_analysis.py
-│ ├── model_training.py
-│ ├── evaluation.py
-│ ├── ensemble_methods.py
-│ ├── pdf_saver.py
-│ └── init.py
+│   ├── data_loader.py          # loads dataset
+│   ├── eda_analysis.py         # runs EDA
+│   ├── preprocessing.py        # preprocessing + split
+│   ├── model_training.py       # (later) train ML models
+│   ├── hyperparameter_tuning.py# (later) grids + Optuna
+│   ├── evaluation.py           # evaluation + plots
+│   ├── ensemble_methods.py     # ensembles
+│   ├── hardware_monitor.py     # optional hardware logs
+│   └── __init__.py
 ├── notebooks/
-│ └── AI_Project.ipynb # main notebook
+│   └── AI_Project.ipynb        # your original Colab notebook
 ├── data/
-│ └── stroke_data.csv # dataset (place here)
-├── figures/ # auto-generated figures
-│ ├── fig1.pdf # feature distributions (EDA)
-│ ├── fig2.pdf # correlation heatmap
-│ ├── fig3.pdf # model comparison & selection
-│ ├── fig4.pdf # ROC curves, PR curves, confusion matrices
-│ └── fig5.pdf # ensemble results & statistical tests
+│   └── stroke_data.csv
+├── figures/
+│   └── (auto-generated PDFs)
 ├── results/
-│ └── final_report.pdf # exported report
-├── main.py # orchestrates full pipeline
+│   └── final_report.pdf
+├── main.py                     # runs everything in order
+├── requirements.txt
 └── README.md
+
 ```
 ---
 ## Methods Used
