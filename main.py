@@ -7,6 +7,7 @@ from src.model_training import train_and_evaluate
 from src.results_analysis import analyze_results
 from src.feature_importance import plot_feature_importances
 from src.ensemble_methods import build_voting_ensemble
+from src.learning_curves import plot_learning_curves
 
 
 if __name__ == "__main__":
@@ -42,4 +43,9 @@ if __name__ == "__main__":
 
     # Merge ensemble results into your results dictionary
     results_val.update(voting_results)
+
+    best_model_name = results_df["AUC"].idxmax()
+    best_model = best_models[best_model_name]
+
+    plot_learning_curves(best_model, best_model_name, X_train, y_train, pdf_saver=pp)
 
