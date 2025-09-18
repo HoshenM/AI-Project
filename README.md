@@ -126,7 +126,7 @@ This will:
 
 ---
 
-## Outputs
+## Outputs (PDFs in `figures_pdf/`)
 
 - **fig1.pdf** — Feature distributions (EDA)  
 - **fig2.pdf** — Correlation heatmap  
