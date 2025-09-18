@@ -94,7 +94,7 @@ source venv/bin/activate
 ```
 
 ### 2) Install dependencies
-If you have requirements.txt:
+If you have `requirements.txt`:
 ```bash
 pip install -r requirements.txt
 ```
@@ -104,97 +104,97 @@ pip install numpy pandas matplotlib seaborn scikit-learn xgboost lightgbm catboo
 ```
 
 ### 3) Dataset
-Place stroke_data.csv inside the data/ folder.
+Place `stroke_data.csv` inside the `data/` folder.
 
 ---
 ## How to Run
-
 Run the full pipeline:
+```bash
 python main.py
-
+```
 This will:
 
-Preprocess data and run EDA (fig1.pdf, fig2.pdf)
+1. Preprocess data and run EDA (**fig1.pdf, fig2.pdf**)
 
-Train & tune 14 supervised models
+2. Train & tune 14 supervised models
 
-Generate evaluation reports (fig3.pdf, fig4.pdf)
+3. Generate evaluation reports (**fig3.pdf, fig4.pdf**)
 
-Train ensemble model and save results (fig5.pdf)
+4. Train ensemble model and save results (**fig5.pdf**)
 
-Export final PDF report to results/
+5. Export final PDF report to `results/`
 ```
 ```
 
 ## Outputs
 
-fig1.pdf — Feature distributions (EDA)
+- **fig1.pdf** — Feature distributions (EDA)
 
-fig2.pdf — Correlation heatmap
+- **fig2.pdf** — Correlation heatmap
 
-fig3.pdf — Model comparison & selection
+- **fig3.pdf** — Model comparison & selection
 
-fig4.pdf — Confusion matrices, ROC & PR curves
+- **fig4.pdf** — Confusion matrices, ROC & PR curves
 
-fig5.pdf — Ensemble results & statistical tests
+- **fig5.pdf** — Ensemble results & statistical tests
 
-final_report.pdf — Complete project report
+- **final_report.pdf** — Complete project report
 ```
 ```
 ## Key Results (current run)
 
-Best Individual Model: Logistic Regression (L1)
+- **Best Individual Model**: Logistic Regression (L1)
 
 Accuracy: 0.842
 
 ROC-AUC: 0.856
 
-Recall (Stroke class): 0.781
+Recall (Stroke class): **0.781**
 
-Best Ensemble: Soft Voting (LR + Random Forest + CatBoost)
+- **Best Ensemble**: Soft Voting (LR + Random Forest + CatBoost)
 
-Accuracy: 0.849
+Accuracy: **0.849**
 
-ROC-AUC: 0.869
+ROC-AUC: **0.869**
 
-Recall (Stroke class): 0.804
+Recall (Stroke class): **0.804**
 ```
 
 ```
 ## Reproducibility
 
-random_state=42 everywhere
+- `random_state=42` everywhere
 
-Stratified splits for balanced folds
+- **Stratified splits** for balanced folds
 
-Scaling applied only after splitting
+- **Scaling** applied only after splitting
 ```
 ```
 ## Files — What They Do
 
-preprocessing.py — cleaning, encoding, scaling
+- **preprocessing.py** — cleaning, encoding, scaling
 
-eda_analysis.py — EDA plots & feature correlations
+- **eda_analysis.py** — EDA plots & feature correlations
 
-model_training.py — model wrappers & training functions
+- **model_training.py** — model wrappers & training functions
 
-hyperparameter_tuning.py — GridSearchCV & Optuna optimization
+- **hyperparameter_tuning.py** — GridSearchCV & Optuna optimization
 
-evaluation.py — metrics, curves, confusion matrices
+- **evaluation.py** — metrics, curves, confusion matrices
 
-ensemble_methods.py — voting, bagging, boosting
+- **ensemble_methods.py** — voting, bagging, boosting
 
-pdf_saver.py — saves figures as PDFs
+- **pdf_saver.py** — saves figures as PDFs
 
-main.py — orchestrates entire pipeline
+- **main.py** — orchestrates entire pipeline
 ```
 
 ```
 ## Data & Code
 
-Dataset: Kaggle Stroke Diagnosis and Health Metrics
+- Dataset: Kaggle Stroke Diagnosis and Health Metrics
 
-This repo includes all scripts to reproduce the analysis and figures.
+- This repo includes all scripts to reproduce the analysis and figures.
 ```
 
 ```
